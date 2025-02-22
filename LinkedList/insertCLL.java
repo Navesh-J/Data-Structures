@@ -1,4 +1,4 @@
-public class insertBeginCLL {
+public class insertCLL {
     public static void main(String[] args) {
         Node head=new Node(10);
         head.next=new Node(20);
