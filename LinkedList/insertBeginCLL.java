@@ -7,8 +7,11 @@ public class insertBeginCLL {
         head.next.next.next.next=new Node(50);
         head.next.next.next.next.next=head;
         printList(head);
-        head=add(head,0);
+        head=addStart(head,0);
         System.out.println();
+        printList(head);
+        System.out.println();
+        head=addEnd(head,60);
         printList(head);
     }
     public static void printList(Node head){
@@ -23,7 +26,7 @@ public class insertBeginCLL {
         return;
     }
 
-    public static Node add(Node head,int x){
+    public static Node addStart(Node head,int x){
         Node temp=new Node(x);
         if(head == null) {
             temp.next=temp;
@@ -35,5 +38,18 @@ public class insertBeginCLL {
         temp.data=head.data;
         head.data=t;
         return head;
+    }
+    public static Node addEnd(Node head,int x){
+        Node temp=new Node(x);
+        if(head == null) {
+            temp.next=temp;
+            return temp;
+        }
+        temp.next=head.next;
+        head.next=temp;
+        int t=temp.data;
+        temp.data=head.data;
+        head.data=t;
+        return temp;
     }
 }
